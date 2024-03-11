@@ -19,8 +19,9 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     //paddingTop: constants.StatusBarHeight,
-    backgroundColor: '#ff9c4a',
-    padding: 8,
+    //backgroundColor: '#ff9c4a',
+    backgroundColor: '#ADB5D9',
+    padding: 18,
     //alignItems: 'center',
    
   },
