@@ -3,12 +3,12 @@ import { StyleSheet, View } from 'react-native';
 //import { } from 'expo-constants';
 
 //import Mensagem from './src/ex2';
-import Atividade1 from './src/atv_1';
+import Exemplo_3 from './src/exemplo_3';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Atividade1 />
+      <Exemplo_3 />
       <StatusBar style="auto" />
     </View>
   );
@@ -20,9 +20,9 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     //paddingTop: constants.StatusBarHeight,
     //backgroundColor: '#ff9c4a',
-    backgroundColor: '#ADB5D9',
+    backgroundColor: 'orange',
     padding: 18,
-    //alignItems: 'center',
+    alignItems: 'center',
    
   },
 });
