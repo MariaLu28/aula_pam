@@ -36,10 +36,18 @@ export default function Exemplo_4 () {
             value={txt2}
             />
 
-            <Pressable style={styles.botao}>
-                <Text style={styles.txtBotao}>Exibir texto</Text>
-            </Pressable>
-
+        <Pressable
+                style={({ pressed }) => pressed ? [styles.botao, styles.botaoPress] : styles.botao}
+                onPress={() => {
+                    setTxtTela(txt2);
+                    setTxt2('')
+                    //ou onPress={() => handleExibeTexto()}
+                
+                }}
+        
+                >
+                    <Text style={styles.txtBotao}>Exibir texto</Text>
+                </Pressable>
                </View>
 
     )

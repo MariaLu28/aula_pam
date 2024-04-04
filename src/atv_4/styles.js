@@ -57,7 +57,23 @@ txtBotao: {
 },
 txtBotaoPress: {
     color: '#b71c1c'
-}
+},
+txtSaida: {
+    margin: 24,
+    fontSize: 22,
+    fontWeight: 'bold',
+    textAlign:'center',
+    color: '#e53935',
+},
+txtEntrada: {
+    borderWidth: 4,
+    textAlign: 'center',
+    fontSize: 22,
+    borderColor: '#b717c1',
+    height: 40,
+    color: '#e53835',
+    borderRadius: 10,
+},
 });
 
 export default styles;
