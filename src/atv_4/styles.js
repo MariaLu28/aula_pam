@@ -74,6 +74,9 @@ txtEntrada: {
     color: '#e53835',
     borderRadius: 10,
 },
+unir: {
+    flexDirection: 'row',
+},
 });
 
 export default styles;
