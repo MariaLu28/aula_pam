@@ -14,10 +14,8 @@ export default function Atividade_5() {
     const [n2, setN2] = useState(0); 
     const [total, setTotal] = useState(0); 
 
-    const [alteraSinalA, setAlteraSinalA] = useState('+') //Altera Sinal pra +
-    const [alteraSinalS, setAlteraSinalS] = useState('+') //Altera Sinal pra -
-    const [alteraSinalM, setAlteraSinalM] = useState('+') //Altera Sinal pra *
-    const [alteraSinalD, setAlteraSinalD] = useState('+') //Altera Sinal pra /
+    const [sinal, setSinal] = useState(); //const pra mudar o sinal
+
     function soma() {
         setTotal(parseFloat(n1) + parseFloat(n2));
     }
@@ -35,11 +33,39 @@ export default function Atividade_5() {
     }
     function zerar() {
         setTotal('');
+        setN1(0);
+        setN2(0);
+        setSinal('');
     }
+
+    // Mudar o sinal para + ADIÇÃO
+    function handleTextA() {
+        soma ();
+        setSinal('+');
+    }
+
+    // Mudar o sinal para - SUBTRAÇÃO
+    function handleTextS() {
+        subtrai ();
+        setSinal('-');
+    }
+  
+    // Mudar o sinal para * MULTIPLICAÇÃO
+    function handleTextM() {
+        multiplica ();
+        setSinal('*');
+    }
+
+    // Mudar o sinal para / DIVISÃO
+    function handleTextD() {
+        divide ();
+        setSinal('/');
+    }
+    
 
     return (
         <View style={styles.container}>
-            <Text style={styles.titulo}> Exemplo 5 </Text>
+            <Text style={styles.titulo}> Atividade 5 </Text>
 
             <Text style={styles.txtSaida}> Calculadora básica </Text>
 
@@ -65,7 +91,7 @@ export default function Atividade_5() {
 
             />
 
-            <Text style={styles.txtSaida}> + </Text>
+            <Text style={styles.txtSaida}>{sinal}</Text>
             
 
             <Text style={styles.textLabel}> 2º número </Text>
@@ -114,8 +140,7 @@ export default function Atividade_5() {
 
                  {/* Botão + */}
             <Pressable
-                
-                onPress={() => soma()}
+                onPress={handleTextA}
                 style={
                     ({pressed}) => pressed ? 
                         [styles.button, styles.buttonTouch] 
@@ -128,7 +153,7 @@ export default function Atividade_5() {
 
             {/* Botão - */}
             <Pressable
-                onPress={() => subtrai()}
+                onPress={handleTextS}
                 style={
                     ({pressed}) => pressed ? 
                         [styles.button, styles.buttonTouch] 
@@ -141,7 +166,7 @@ export default function Atividade_5() {
 
             {/* Botão * */}
             <Pressable
-                onPress={() => multiplica()}
+                onPress={handleTextM}
                 style={
                     ({pressed}) => pressed ? 
                         [styles.button, styles.buttonTouch] 
@@ -154,7 +179,7 @@ export default function Atividade_5() {
 
             {/* Botão / */}
             <Pressable
-                onPress={() => divide()}
+                onPress={handleTextD}
                 style={
                     ({pressed}) => pressed ? 
                         [styles.button, styles.buttonTouch] 
